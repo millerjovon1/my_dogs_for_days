@@ -1,0 +1,15 @@
+<div class="" style="background-image: ">
+  <div class="container">
+    <h1></h1>
+  </div>
+</div>
+<div class="container my-5">
+  <div class="cards">
+    <% @dogs.each do |dog| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= xxx.banner_url %>)">
+        <%= dog.name %>
+        <%= link_to '', xxx_path(xxx), class: 'card-category-link'%>
+      </div>
+    <% end %>
+  </div>
+</div>
