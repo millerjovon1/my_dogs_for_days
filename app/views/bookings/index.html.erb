@@ -1,7 +1,25 @@
-<h1>Your Bookings</h1>
-<ul><% @bookings.each do |booking| %>
-    <li><%=booking.dog.name  %> </li>
-    <li> <%= booking.start_date %></li>
-    <li> <%= booking.end_date %></li>
+<div class="container">
+  <h1>Your Bookings</h1>
+  <h2>Past Bookings</h2>
+  <% @bookings.each do |booking| %>
+    <div class="card-product">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="card-product-infos">
+        <h2> Dog Name: <%=booking.dog.name  %></h2>
+        <p> Start Date: <%= booking.start_date %></p>
+        <p> End Date: <%= booking.end_date %></p>
+      </div>
+    </div>
   <% end %>
-</ul>
+  <h2>Future  Bookings</h2>
+  <% @bookings.each do |booking| %>
+    <div class="card-product">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="card-product-infos">
+        <h2> Dog Name: <%=booking.dog.name  %></h2>
+        <p> Start Date: <%= booking.start_date %></p>
+        <p> End Date: <%= booking.end_date %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

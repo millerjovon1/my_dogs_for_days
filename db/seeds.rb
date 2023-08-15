@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 puts "Cleaning the DB..."
-User.destroy_all
 Dog.destroy_all
+User.destroy_all
 
 # puts "Creating prisons..."
 # prison = Prison.create!(
@@ -55,6 +55,7 @@ User.all.each do |user|
     age: Faker::Creature::Dog.age,
     size: Faker::Creature::Dog.size,
     price: Faker::Commerce.price,
+    image_url: "http://source.unsplash.com/featured/?dog>&#{rand(1000)}",
     user: user
   )
 end
