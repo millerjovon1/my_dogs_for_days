@@ -14,10 +14,11 @@ class BookingsController < ApplicationController
     @dog = Dog.find(params[:dog_id])
     @booking = Booking.new(booking_params)
     @booking.dog = @dog
+    @booking.user = current_user
       if @booking.save
-        redirect_to booking_index_path(@dog)
+        redirect_to bookings_path
       else
-        render :new, status: :unprocessable_entity
+        render "dogs/show", status: :unprocessable_entity
       end
      end
 
