@@ -1,19 +1,19 @@
 class BookingsController < ApplicationController
   # skip_before_action :authenticate_user!, only: [:index, :show]
-
   def index
-    @bookings = current_user.bookings
+    @future_bookings = current_user.bookings.future
+    @past_bookings = current_user.bookings.past
   end
 
   def new
     @dog = Dog.find(params[:dog_id])
     @booking = Booking.new
-     end
+  end
 
-     def create
-      @dog = Dog.find(params[:dog_id])
-      @booking = Booking.new(booking_params)
-      @booking.dog = @dog
+  def create
+    @dog = Dog.find(params[:dog_id])
+    @booking = Booking.new(booking_params)
+    @booking.dog = @dog
       if @booking.save
         redirect_to booking_index_path(@dog)
       else
