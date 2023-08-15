@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Your Bookings</h1>
+  <% @bookings.each do |booking| %>
+    <div class="card-product">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="card-product-infos">
+        <h2>Dog Name: <%=booking.dog.name  %></h2>
+        <p> Start Date: <%= booking.start_date %></p>
+        <p> End Date: <%= booking.end_date %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
