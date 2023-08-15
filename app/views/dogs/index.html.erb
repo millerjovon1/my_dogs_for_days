@@ -12,7 +12,7 @@
     <% @dogs.each do |dog| %>
       <div class= "dog-cards" style="background">
         <%= dog.name %>
-         <%= class:'dog-image' image_tag dog.image_url %> </div>
+         <%= image_tag dog.image_url %>
         <%= link_to 'PET ME', dog_path(dog), class: 'card-category-link'%>
       </div>
     <% end %>
